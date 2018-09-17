@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "test": "mocha"
+    "test": "mocha",
+    "test-cover": "nyc --reporter=html --reporter=text mocha"
   },
   "author": "",
   "license": "ISC",
@@ -23,6 +24,9 @@
     "mocha": "^5.2.0",
     "mongoose": "^4.8.5",
     "node-thumbnail": "^0.14.0",
+    "nyc": "^13.0.1"
+  },
+  "devDependencies": {
     "nyc": "^13.0.1"
   }
 }

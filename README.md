@@ -64,3 +64,6 @@ End with an example of getting some data out of the system or using it for a lit
 ## Running the tests
 Run npm test in all the three service directories
 
+## Running the test coverage
+Run npm run test-cover in all the three service directories
+

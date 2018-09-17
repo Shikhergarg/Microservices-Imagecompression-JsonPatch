@@ -1,3 +1,6 @@
 auth_service/node_modules/
 image_service/node_modules/
 patch_service/node_modules/
+auth_service/.vs
+image_service/.vs
+patch_service/.vs
