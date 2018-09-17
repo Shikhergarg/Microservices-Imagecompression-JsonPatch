@@ -6,11 +6,8 @@ var jsonpatch = require('fast-json-patch');
 var VerifyToken = require(__root + 'auth/VerifyToken');
 
 router.use(bodyParser.urlencoded({ extended: true }));
-console.log("faasfda"); console.log("faasfda");
-// CREATES A NEW USER
+// Apply Json Patch over JSON Object 
 router.post('/', VerifyToken, function (req, res) {
-	console.log(req.body);
-	console.log(req.body.jsonobj);
 	try {
 		var patch = JSON.parse(req.body.jsonpatch);
 		var document = JSON.parse(req.body.jsonobj);

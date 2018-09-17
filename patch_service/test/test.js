@@ -14,7 +14,7 @@ describe('API endpoint /api/jsonpatch', function () {
 			done();
 		});
 	});
-	beforeEach((done) => { //Before each test we empty the database
+	beforeEach((done) => {
 			done();
 		});
 	after(function () {

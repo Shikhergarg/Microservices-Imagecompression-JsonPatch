@@ -6,7 +6,7 @@ chai.use(require('chai-http'));
 
 const app = require('../index.js'); // Our app
 
-describe('API endpoint /login', function () {
+describe('API endpoint /api/auth/login', function () {
 	this.timeout(15000); // How long to wait for a response (ms)
 
 	before(done => {
@@ -78,7 +78,7 @@ describe('API endpoint /login', function () {
 	});
 });
 
-	describe('API endpoint /logout', function () {
+	describe('API endpoint /api/auth/logout', function () {
 		this.timeout(15000); // How long to wait for a response (ms)
 
 		before((done) => { //Before each test we empty the database
@@ -111,7 +111,7 @@ describe('API endpoint /login', function () {
 		
 
 	});
-	describe('API endpoint /register', function () {
+	describe('API endpoint /api/auth/register', function () {
 		this.timeout(15000); // How long to wait for a response (ms)
 
 		before((done) => { //Before each test we empty the database
@@ -163,14 +163,14 @@ describe('API endpoint /login', function () {
 
 
 });
-describe('API endpoint /me', function () {
+describe('API endpoint /api/auth/me', function () {
 	this.timeout(15000); // How long to wait for a response (ms)
 
-	before((done) => { //Before each test we empty the database
+	before((done) => { 
 		done();
 	}
 	);
-	beforeEach((done) => { //Before each test we empty the database
+	beforeEach((done) => { 
 		done();
 	});
 	after(function () {

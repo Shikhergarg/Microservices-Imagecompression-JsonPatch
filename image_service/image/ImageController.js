@@ -9,11 +9,10 @@ var VerifyToken = require(__root + 'auth/VerifyToken');
 
 router.use(bodyParser.urlencoded({ extended: true }));
 
-// CREATES A NEW USER
+// Compress a Image
 router.post('/', VerifyToken, function (req, res) {
-	console.log("fasfafafsafas")
+	
 	var imageurl = req.body.url;
-	console.log(req.body)
 	const options = {
 		url: imageurl,
 		dest: './image/testimage',                  // Save to /path/to/dest/image.jpg

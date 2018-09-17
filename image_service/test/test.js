@@ -15,7 +15,7 @@ describe('API endpoint /api/imagecompressor', function () {
 			done();
 		});
 	});
-	beforeEach((done) => { //Before each test we empty the database
+	beforeEach((done) => { 
 		done();
 	});
 	after(function () {
