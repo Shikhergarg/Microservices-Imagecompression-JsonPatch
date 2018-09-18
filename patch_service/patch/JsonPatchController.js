@@ -10,16 +10,16 @@ router.use(bodyParser.urlencoded({ extended: true }));
 router.post('/', VerifyToken, function (req, res) {
 	try {
 		var patch = JSON.parse(req.body.jsonpatch);
-		var document = JSON.parse(req.body.jsonobj);
+		var obj = JSON.parse(req.body.jsonobj);
 	} catch (err) {
 		res.status(403).send("JSON Format is wrong");
 	}
 	
-	var errors = jsonpatch.validate(patch, document);
+	var errors = jsonpatch.validate(patch, obj);
 	
 	if (errors === undefined) {
-		document = jsonpatch.applyPatch(document, patch).newDocument;
-		res.status(200).send(document);
+		obj = jsonpatch.applyPatch(obj, patch).newDocument;
+		res.status(200).send(obj);
 	}
 	else {
 		res.status(200).send(errors);

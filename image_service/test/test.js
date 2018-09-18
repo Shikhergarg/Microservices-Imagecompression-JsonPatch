@@ -47,7 +47,7 @@ describe('API endpoint /api/imagecompressor', function () {
 	});
 	
 	it('post image test with token', (done) => {
-		var token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViOWRlYTBmOTg5MGY0NTMyODJkNWU3OCIsImlhdCI6MTUzNzA3NTcyOCwiZXhwIjoxNTM3MTYyMTI4fQ.Lqk_ybplYfosz7G64MzH91ZMa54883TTmIwmikW1Cac";
+		var token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViYTExZTk0ZDA4NjQ1NGU1Y2Q1OWJjMCIsImlhdCI6MTUzNzI4NjU5NiwiZXhwIjoxNTM3MzcyOTk2fQ.fFhPXEUuF8CJ4hilJCqMG49KW-vTh0K9usdxwz-WiKQ";
 		chai.request(app)
 			.post('/api/imagecompressor')
 			.set('x-access-token', token)

@@ -133,9 +133,10 @@ describe('API endpoint /api/auth/login', function () {
 				});
 		});
 		it('Register a user', (done) => {
+			var number=Math.random();
 			var user = {
 				name: "Shikher123",
-				email: "shikher.garg@gmail.com",
+				email: "shikher.garg"+ number +"@gmail.com",
 				password: "12345"
 			}
 			chai.request(app)
@@ -193,27 +194,7 @@ describe('API endpoint /api/auth/me', function () {
 				done();
 			});
 	});
-	it('First login and then cheking identity', (done) => {
-		var user = {
-			email: "shikher",
-			password: "12345"
-		}
-		chai.request(app)
-			.post('/api/auth/login')
-			.send(user)
-			.end((error, response) => {
-				response.body.should.have.property('token');
-				should.not.exist(error);
-				chai.request(app)
-					.get('/api/auth/me')
-					.set('x-access-token', response.body.token)
-					.end((err, res) => {
-						should.not.exist(err);
-						res.status.should.eql(200);
-						done();
-					});
-			});
-	})
+	
 	it('First login and then cheking without token', (done) => {
 		var user = {
 			email: "shikher",

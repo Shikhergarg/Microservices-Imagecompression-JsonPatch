@@ -57,7 +57,7 @@ describe('API endpoint /api/jsonpatch', function () {
 				});
 	});
 	it('post json patch with token', (done) => {
-		var token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViOWRlYTBmOTg5MGY0NTMyODJkNWU3OCIsImlhdCI6MTUzNzA3NTcyOCwiZXhwIjoxNTM3MTYyMTI4fQ.Lqk_ybplYfosz7G64MzH91ZMa54883TTmIwmikW1Cac";
+		var token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViYTExZTk0ZDA4NjQ1NGU1Y2Q1OWJjMCIsImlhdCI6MTUzNzI4NjU5NiwiZXhwIjoxNTM3MzcyOTk2fQ.fFhPXEUuF8CJ4hilJCqMG49KW-vTh0K9usdxwz-WiKQ";
 		
 		
 		var patch = { jsonobj: '{"baz": "qux","foo": "bar"}', jsonpatch: '[{ "op": "replace", "path": "/baz", "value": "boo" }]' };
@@ -72,9 +72,7 @@ describe('API endpoint /api/jsonpatch', function () {
 			});
 	});
 	it('JSON Format is incorrect', (done) => {
-		var token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViOWRlYTBmOTg5MGY0NTMyODJkNWU3OCIsImlhdCI6MTUzNzA3NTcyOCwiZXhwIjoxNTM3MTYyMTI4fQ.Lqk_ybplYfosz7G64MzH91ZMa54883TTmIwmikW1Cac";
-
-
+		var token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViYTExZTk0ZDA4NjQ1NGU1Y2Q1OWJjMCIsImlhdCI6MTUzNzI4NjU5NiwiZXhwIjoxNTM3MzcyOTk2fQ.fFhPXEUuF8CJ4hilJCqMG49KW-vTh0K9usdxwz-WiKQ";
 		var patch = { jsonobj: '{324143}', jsonpatch: '[{ "op": "replace", "path": "/baz", "value": "boo" }]' };
 		chai.request(app)
 			.post('/api/jsonpatch')

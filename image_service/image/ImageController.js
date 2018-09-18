@@ -3,25 +3,24 @@ var router = express.Router();
 var bodyParser = require('body-parser');
 var fs = require('fs');
 var thumb = require('node-thumbnail').thumb;
-var downloader = require('image-downloader');
-
-var VerifyToken = require(__root + 'auth/VerifyToken');
+const downloader = require('image-downloader');	//For Downloading a Image
+const VerifyToken = require(__root + 'auth/VerifyToken');	//For Compression
 
 router.use(bodyParser.urlencoded({ extended: true }));
 
 // Compress a Image
 router.post('/', VerifyToken, function (req, res) {
 	
-	var imageurl = req.body.url;
+	const imageurl = req.body.url;
 	const options = {
 		url: imageurl,
-		dest: './image/testimage',                  // Save to /path/to/dest/image.jpg
+		dest: './image/testimage',                  // Save to path /image/testimage
 		done: function (err, filename, image) {
 			if (err) {
 				res.status(200).send("Invalid URL");
 			}
 			else {
-				thumb({
+				thumb({				
 					source: filename, // could be a filename: dest/path/image.jpg
 					destination: './image/testimage',
 					width: 50,
