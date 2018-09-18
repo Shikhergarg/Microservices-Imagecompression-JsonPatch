@@ -26,7 +26,6 @@ router.post('/', VerifyToken, function (req, res) {
 					width: 50,
 					overwrite: true
 				}, function (files, err) {
-					console.log(files[0].srcPath);
 					res.writeHead(200, { 'content-type': 'image/jpg' });
 					fs.createReadStream(files[0].dstPath).pipe(res);
 				});
