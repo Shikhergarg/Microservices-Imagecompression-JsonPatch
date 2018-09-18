@@ -2,7 +2,6 @@ var app = require('./app');
 var port = process.env.PORT || 3000;
 
 var mongoose = require('mongoose');
-//mongoose.connect('mongodb://div:12345@ds031975.mlab.com:31975/redcarp');
 mongoose.connect('mongodb://Shikher:123456s@ds151892.mlab.com:51892/socialcopsassignment');
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));

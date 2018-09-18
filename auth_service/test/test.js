@@ -7,14 +7,14 @@ chai.use(require('chai-http'));
 const app = require('../index.js'); // Our app
 
 describe('API endpoint /api/auth/login', function () {
-	this.timeout(15000); // How long to wait for a response (ms)
+	this.timeout(2000); // How long to wait for a response (ms)
 
 	before(done => {
 		app.on("app_started", function () {
 			done();
 		});
 	});
-	beforeEach((done) => { //Before each test we empty the database
+	beforeEach((done) => { 
 		done();
 	});
 	after(function () {
@@ -79,7 +79,7 @@ describe('API endpoint /api/auth/login', function () {
 });
 
 	describe('API endpoint /api/auth/logout', function () {
-		this.timeout(15000); // How long to wait for a response (ms)
+		this.timeout(2000); // How long to wait for a response (ms)
 
 		before((done) => { //Before each test we empty the database
 			done();
@@ -164,7 +164,7 @@ describe('API endpoint /api/auth/login', function () {
 
 });
 describe('API endpoint /api/auth/me', function () {
-	this.timeout(15000); // How long to wait for a response (ms)
+	this.timeout(2000); // How long to wait for a response (ms)
 
 	before((done) => { 
 		done();

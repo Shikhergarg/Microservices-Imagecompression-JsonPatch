@@ -19,7 +19,6 @@ router.post('/', VerifyToken, function (req, res) {
 	
 	if (errors === undefined) {
 		document = jsonpatch.applyPatch(document, patch).newDocument;
-		
 		res.status(200).send(document);
 	}
 	else {

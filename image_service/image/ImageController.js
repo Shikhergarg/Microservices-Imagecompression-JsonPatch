@@ -35,7 +35,6 @@ router.post('/', VerifyToken, function (req, res) {
 		}
 	};
 	downloader(options);
-	console.log("fsdsd");
 	
 });
 
